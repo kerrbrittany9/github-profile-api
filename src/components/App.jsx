@@ -1,9 +1,11 @@
 import React from 'react';
+import ProfileDisplay from './ProfileDisplay';
 
 function App(props) {
   return (
     <div>
-      <p>Hi</p>
+      <h1>Brittany Hardison's Github</h1>
+      <ProfileDisplay/>
     </div>
   );
 }
