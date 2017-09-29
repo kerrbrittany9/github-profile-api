@@ -1,4 +1,5 @@
 import * as types from "./../constants/ActionTypes";
+var apiKey = require('./../../.env').apiKey
 import v4 from "uuid/v4";
 
 export const requestRepo = (profileId) => ({
