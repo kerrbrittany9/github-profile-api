@@ -8,7 +8,7 @@ const ProfileDisplay = ({ dispatch, profile }) => {
     <div>
       <button onClick={() => {dispatch(fetchRepo())}}>View Repos</button>
       <br/>
-      {profile.name}
+      {profile.html}
     </div>
   );
 }

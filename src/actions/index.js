@@ -17,7 +17,7 @@ export function fetchRepo(dispatch) {
   return function (dispatch) {
     const profileId = v4();
     dispatch(requestRepo(profileId));
-    return fetch("https://api.github.com/users/kerrbrittany9/starred")
+    return fetch("https://api.github.com/users/kerrbrittany9")
     .then(
       response => response.json(),
       error => console.log("An error occurred.", error)

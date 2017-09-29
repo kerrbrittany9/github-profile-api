@@ -23,7 +23,7 @@ const profileReducer = (state = defaultState, action) => {
         html: action.html,
         profileId: action.profileId
       });
-      newState = Object.assign({}, state, {[action.name]: newProfile });
+      newState = Object.assign({}, state, {["brittany"]: newProfile });
       console.log(newState);
       return newState;
     default:
