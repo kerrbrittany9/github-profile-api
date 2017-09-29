@@ -8,7 +8,7 @@ const reposById = (state = defaultState, action) => {
   let newState;
   switch (action.type) {
     case types.REQUEST_REPO:
-      newDog = {
+      newProfile = {
         isFetching: true,
         profileSearch: action.profileSearch,
         profileId: action.profileId
@@ -17,8 +17,8 @@ const reposById = (state = defaultState, action) => {
       });
       return newState;
     case types.DISPLAY_REPO:
-      dog = state[action.profoleId];
-      newDog = Object.assign({}, profile, {
+      profile = state[action.profoleId];
+      newProfile = Object.assign({}, profile, {
         isFetching: false,
         profileSearch: action.profileSearch,
         profile: action.profile,

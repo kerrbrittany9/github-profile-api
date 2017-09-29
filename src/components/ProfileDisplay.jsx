@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 
 const ProfileDisplay = ({ dispatch, profile })=> {
-  console.log(dog);
+  console.log(profile);
   let formAreaContent;
   if (profile.profileId === 0) {
     formAreaContent =
