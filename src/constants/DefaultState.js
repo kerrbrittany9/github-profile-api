@@ -1,6 +1,5 @@
 export const defaultState = {
   isFetching: false,
-  profileSearch: "album-store",
-  profile: "album-store link",
+  profile: "album",
   profileId: 0
-}
+};

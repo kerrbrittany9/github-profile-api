@@ -1,1 +1,1 @@
-27b97c9305730f82404820faaed743515d744bed
+var apiKey = require('./../.env').apiKey;
