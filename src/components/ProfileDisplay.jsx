@@ -8,15 +8,16 @@ const ProfileDisplay = ({ dispatch, profile }) => {
     <div>
       <button onClick={() => {dispatch(fetchRepo())}}>View Repos</button>
       <br/>
-      {profile}
+      {profile.name}
     </div>
   );
 }
 
 
 const mapStateToProps = state => {
+  const profile = state;
   return {
-    profile: state
+    profile: profile
   };
 };
 

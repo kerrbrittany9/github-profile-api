@@ -1,5 +1,6 @@
 export const defaultState = {
   isFetching: false,
-  profile: "album",
+  name: "album",
+  html: "album-repo",
   profileId: 0
 };

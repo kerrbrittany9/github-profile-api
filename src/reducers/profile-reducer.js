@@ -2,7 +2,7 @@ import constants from "./../constants";
 
 const { defaultState, types } = constants;
 
-const reposById = (state = defaultState, action) => {
+const profileReducer = (state = defaultState, action) => {
   let profile;
   let newProfile;
   let newState;
@@ -19,13 +19,16 @@ const reposById = (state = defaultState, action) => {
       profile = state[action.profileId];
       newProfile = Object.assign({}, profile, {
         isFetching: false,
-        profile: action.profile,
+        name: action.name,
+        html: action.html,
         profileId: action.profileId
       });
-      return newProfile;
+      newState = Object.assign({}, state, {[action.name]: newProfile });
+      console.log(newState);
+      return newState;
     default:
       return state;
   }
 }
 
-export default reposById;
+export default profileReducer;
