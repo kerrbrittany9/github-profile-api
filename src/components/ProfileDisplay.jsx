@@ -1,13 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchRepo } from "./../actions";
+import { Button } from "react-bootstrap";
 
 
 const ProfileDisplay = ({ dispatch, profile }) => {
+  var buttonStyle = {
+    border: 'no-border'
+  }
   return (
     <div>
       {profile.starred}
-      <button onClick={() => {dispatch(fetchRepo())}}>View Repos</button>
+      <Button bsStyle="link" onClick={() => {dispatch(fetchRepo())}}>View Repos</Button>
       <br/>
     </div>
   );
