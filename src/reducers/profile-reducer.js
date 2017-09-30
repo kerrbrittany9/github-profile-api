@@ -16,14 +16,13 @@ const profileReducer = (state = defaultState, action) => {
       });
       return newState;
     case types.DISPLAY_REPO:
-      profile = state[action.profileId];
-      newProfile = Object.assign({}, profile, {
+      newProfile = Object.assign({}, {
         isFetching: false,
         name: action.name,
         html: action.html,
         profileId: action.profileId
       });
-      newState = Object.assign({}, state, {["brittany"]: newProfile });
+      newState = Object.assign({}, state, {["starred"]: newProfile });
       console.log(newState);
       return newState;
     default:

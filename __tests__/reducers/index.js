@@ -6,11 +6,30 @@ import profileReducer from "./../../src/reducers/profile-reducer";
 describe("Profile App", () => {
   const { defaultState, types } = constants;
 
-  describe("profile reducer", () => {
-    const profileData = defaultState.profileReducer[defaultState.selectedProfile];
-      it('should return to default state', () => {
-        expect(profileReducer(defaultState.profileReducer, { type: null }))
-        .toEqual(defaultState.profileReducer);
-    });
-  })
+  it('should return to default state', () => {
+    expect(profileReducer(defaultState.profileReducer, { type: null }))
+    .toEqual(defaultState.profileReducer);
+  });
+
+  it("should update state on request repos", () => {
+    const action = actions.requestRepo();
+    const newObject = {
+      isFetching: true,
+      profileId: action.profileId
+  };
+  expect(profileReducer(defaultState.profileReducer,     action)[action.portfolioId])
+  .toEqual(newObject);
+});
+
+  it("should update state on receive repo", () => {
+    const action = actions.displayRepo("name", "html");
+    const newObject = {
+      isFetching: false,
+      name: action.name,
+      html: action.url,
+      profileId: action.profileId
+    };
+    expect(profileReducer(defaultState.profile, action)["starred"])
+     .toEqual(newObject);
+  });
 })

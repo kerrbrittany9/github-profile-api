@@ -6,9 +6,9 @@ import { fetchRepo } from "./../actions";
 const ProfileDisplay = ({ dispatch, profile }) => {
   return (
     <div>
+      {profile.starred}
       <button onClick={() => {dispatch(fetchRepo())}}>View Repos</button>
       <br/>
-      {profile.html}
     </div>
   );
 }
@@ -16,8 +16,9 @@ const ProfileDisplay = ({ dispatch, profile }) => {
 
 const mapStateToProps = state => {
   const profile = state;
+  console.log(profile);
   return {
-    profile: profile
+    profile: profile.name
   };
 };
 
