@@ -1,6 +1,9 @@
 import React from 'react';
+import Header  from './Header';
+import Resume from './Resume';
 import ProfileDisplay from './ProfileDisplay';
 import Background from "./../images/cactus.jpg";
+import { Switch, Route } from 'react-router-dom';
 
 function App(props) {
 
@@ -17,8 +20,11 @@ function App(props) {
 
   return (
     <div style={appStyle}>
-      <h1>Brittany Hardison's Github</h1>
-      <ProfileDisplay/>
+      <Header/>
+      <Switch>
+        <Route exact path="/" component={ProfileDisplay}/>
+        <Route path="/resume" component={Resume}/>
+      </Switch>
     </div>
   );
 }
