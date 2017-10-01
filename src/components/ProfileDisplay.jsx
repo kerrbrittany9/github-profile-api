@@ -10,8 +10,8 @@ const ProfileDisplay = ({ dispatch, profiles }) => {
   }
   return (
     <div>
-      profiles.map((profile) => 
-        {profile.name}
+      profiles.map((profile) =>
+        {profiles}
       )}
       <Button bsStyle="link" onClick={() => {dispatch(fetchRepo())}}>View Repos</Button>
       <br/>
@@ -36,7 +36,7 @@ const mapStateToProps = state => {
   //   };
   // }
   return {
-    profiles: state
+    profiles: profiles
   };
 };
 
