@@ -7,16 +7,12 @@ export const requestRepo = (profileId) => ({
   profileId: profileId
 });
 
-export const displayRepo = (name, html, profileId) => ({
+export const displayRepo = (starred) => ({
   type: types.DISPLAY_REPO,
-  name,
-  html,
-  profileId
+  starred
 });
 
 export function fetchRepo(dispatch) {
-  const name = [];
-  const html = [];
   return function (dispatch) {
     const profileId = v4();
     dispatch(requestRepo(profileId));
@@ -25,11 +21,19 @@ export function fetchRepo(dispatch) {
       response => response.json(),
       error => console.log("An error occurred.", error)
     ).then(function(json) {
+      var starred = [];
       for(var i = 0; i < json.length; i++) {
-        name.push(json[i].name);
-        html.push(json[i].html_url);
+        const name = json[i].name;
+        const html = json[i].html_url;
+        const allStarred = {
+          name: name,
+          html: html,
+          profileId: profileId
+        }
+      starred.push(allStarred)
       }
-      dispatch(displayRepo(name, html, profileId));
+      console.log(starred);
+      dispatch(displayRepo(starred));
     });
   };
 }

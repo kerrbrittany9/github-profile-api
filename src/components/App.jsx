@@ -9,14 +9,14 @@ function App(props) {
 
   var appStyle = {
     textAlign: 'center',
-    margin: "50",
+    margin: "50px",
     color: "pink",
     backgroundImage: "url(" + Background + ")",
-    height: '980',
-    width: '1000',
+    height: '980px',
+    width: '1000px',
     backgroundRepeat: 'no-repeat',
-    marginLeft: '130',
-    paddingTop: '10'
+    marginLeft: '130px',
+    paddingTop: '10px'
   };
 
   return (
