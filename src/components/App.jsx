@@ -8,13 +8,14 @@ import { Switch, Route } from 'react-router-dom';
 function App(props) {
 
   var appStyle = {
+    textAlign: 'center',
     margin: "50",
     color: "pink",
     backgroundImage: "url(" + Background + ")",
-    height: '600',
+    height: '980',
+    width: '1000',
     backgroundRepeat: 'no-repeat',
-    textAlign: 'center',
-    marginLeft: '150',
+    marginLeft: '130',
     paddingTop: '10'
   };
 
