@@ -4,14 +4,14 @@ import { fetchRepo } from "./../actions";
 import { Button } from "react-bootstrap";
 
 
-const ProfileDisplay = ({ dispatch, profile }) => {
+const ProfileDisplay = ({ dispatch, profiles }) => {
   var buttonStyle = {
     border: 'no-border'
   }
   return (
     <div>
-      profiles.map((profile) =>
-        {profile}
+      profiles.map((profile) => 
+        {profile.name}
       )}
       <Button bsStyle="link" onClick={() => {dispatch(fetchRepo())}}>View Repos</Button>
       <br/>
