@@ -1,9 +1,8 @@
 import constants from "./../constants";
 
-
 const { defaultState, types } = constants;
 
-const profileReducer = (state = [], action) => {
+const profileReducer = (state = defaultState, action) => {
   let newProfile;
   let newState;
   let starred;

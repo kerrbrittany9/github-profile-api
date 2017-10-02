@@ -1,4 +1,4 @@
 export const defaultState = {
   isFetching: false,
-  profile: []
+  profile: ["sample sample"]
 };
