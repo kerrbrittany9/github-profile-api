@@ -5,7 +5,6 @@ const { defaultState, types } = constants;
 const profileReducer = (state = defaultState, action) => {
   let newProfile;
   let newState;
-  let starred;
   switch (action.type) {
     case types.REQUEST_REPO:
       newProfile = {
@@ -16,7 +15,13 @@ const profileReducer = (state = defaultState, action) => {
       });
       return newState;
     case types.DISPLAY_REPO:
-        newState = action.starred;
+        newProfile = Object.assign({}, state, {
+          isFetching: false,
+          name: action.name,
+          html: action.html,
+          profileId: action.profileId
+        });
+        newState = Object.assign({}, state, {["repos"]: newProfile});
       return newState;
     default:
       return state;

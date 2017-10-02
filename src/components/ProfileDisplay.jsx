@@ -1,25 +1,43 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 import { fetchRepo } from "./../actions";
 import { Button } from "react-bootstrap";
+import Stats from './Stats';
 
-
-const ProfileDisplay = ({ dispatch, profiles }) => {
-  var buttonStyle = {
-    border: 'no-border'
+class ProfileDisplay extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    console.log(this.props.profile);
   }
-  return (
-    <div>
-      {profiles}
-      <Button bsStyle="link" onClick={() => {dispatch(fetchRepo())}}>View Repos</Button>
-      <br/>
-    </div>
-  );
+
+  handleSubmit(){
+    this.props.dispatch(fetchRepo());
+  }
+
+
+    render () {
+    var buttonStyle = {
+    border: 'no-border'
+    }
+    return (
+      <div>
+      {this.props.profiles.map((profile) =>
+      <Stats
+        profile={profile}
+        key={profile.profileId}/>
+       )}
+        <Button bsStyle="link" onClick={this.handleSubmit}>View Repos</Button>
+        <br/>
+      </div>
+    );
+  }
 }
 
 
 const mapStateToProps = state => {
-  const profiles = state.profiles;
+  const profiles = state;
   console.log(profiles);
   return {
     profiles: profiles
