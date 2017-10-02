@@ -1,4 +1,7 @@
 export const defaultState = {
   isFetching: false,
-  profile: ["sample sample"]
+  repos: [{
+    name: "api-chuck-norris",
+    url: "https://github.com/kerrbrittany9/api-chuck-norris"
+  }]
 };

@@ -22,7 +22,7 @@ describe("Profile App", () => {
 });
 
   it("should update state on receive repo", () => {
-    const action = actions.displayRepo("name", "html");
+    const action = actions.receiveRepo("name", "html");
     const newObject = {
       isFetching: false,
       name: action.name,

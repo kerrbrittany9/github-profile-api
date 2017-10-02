@@ -9,7 +9,6 @@ class ProfileDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    console.log(this.props.profile);
   }
 
   handleSubmit(){
@@ -23,7 +22,10 @@ class ProfileDisplay extends React.Component {
     }
     return (
       <div>
-        
+          {this.props.repos.map(function(repo){
+            return repo.name
+          })
+        }
         <Button bsStyle="link" onClick={this.handleSubmit}>View Repos</Button>
         <br/>
       </div>
@@ -33,11 +35,11 @@ class ProfileDisplay extends React.Component {
 
 
 const mapStateToProps = state => {
-  const profiles = state;
-  console.log(profiles);
+  // const repos = state;
   return {
-    profiles: profiles
+    repos: state.repos
   };
+  console.log(repos);
 };
 
 export default connect(mapStateToProps)(ProfileDisplay);
