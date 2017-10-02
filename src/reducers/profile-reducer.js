@@ -1,10 +1,12 @@
 import constants from "./../constants";
 
+
 const { defaultState, types } = constants;
 
 const profileReducer = (state = [], action) => {
   let newProfile;
   let newState;
+  let starred;
   switch (action.type) {
     case types.REQUEST_REPO:
       newProfile = {
@@ -15,11 +17,7 @@ const profileReducer = (state = [], action) => {
       });
       return newState;
     case types.DISPLAY_REPO:
-      newProfile = Object.assign({}, {
-        isFetching: false,
-        starred: action.starred
-      })
-      newState = Object.assign({}, state, {[action.starred]: newProfile });
+        newState = action.starred;
       return newState;
     default:
       return state;

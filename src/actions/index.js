@@ -32,8 +32,8 @@ export function fetchRepo(dispatch) {
         }
       starred.push(allStarred)
       }
-      console.log(starred);
       dispatch(displayRepo(starred));
+      console.log(starred);
     });
   };
 }

@@ -10,9 +10,7 @@ const ProfileDisplay = ({ dispatch, profiles }) => {
   }
   return (
     <div>
-      {profiles.map((profile) =>
         {profiles}
-      )}
       <Button bsStyle="link" onClick={() => {dispatch(fetchRepo())}}>View Repos</Button>
       <br/>
     </div>
@@ -23,6 +21,8 @@ const ProfileDisplay = ({ dispatch, profiles }) => {
 const mapStateToProps = state => {
   // let info;
   const profiles = state;
+  console.log(profiles);
+
   // if(!state.isFetching) {
   //   info = {
   //     name: state.name,
