@@ -23,11 +23,7 @@ class ProfileDisplay extends React.Component {
     }
     return (
       <div>
-      {this.props.profiles.map((profile) =>
-      <Stats
-        profile={profile}
-        key={profile.profileId}/>
-       )}
+        
         <Button bsStyle="link" onClick={this.handleSubmit}>View Repos</Button>
         <br/>
       </div>

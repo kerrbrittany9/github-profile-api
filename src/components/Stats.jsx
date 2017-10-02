@@ -5,7 +5,7 @@ function Stats(props) {
 
 return(
   <div>
-   <p>{props.profile.name}</p>
+   <p>{props.profile.repos.name}</p>
   </div>
 )
 }
