@@ -20,15 +20,17 @@ class ProfileDisplay extends React.Component {
     var buttonStyle = {
     border: 'no-border'
     }
+    var listStyle = {
+      listItemType: 'none'
+    }
     return (
       <div>
           <ul>
           {this.props.repos.map(function(repo){
-            return
-              <li><a key={repo.url} target="_blank" href={repo.url}>{repo.name}</a></li>
+            return  <li style={listStyle}><a key={repo.url} target="_blank" href={repo.url}>{repo.name}</a></li>
             })
           }
-            </ul>
+          </ul>
         <Button bsStyle="link" onClick={this.handleSubmit}>View Repos</Button>
         <br/>
       </div>
@@ -40,8 +42,7 @@ class ProfileDisplay extends React.Component {
 const mapStateToProps = state => {
   // const repos = state;
   return {
-    repos: state.repos,
-    isFetching: state.isFetching
+    repos: state.repos
   };
 };
 
