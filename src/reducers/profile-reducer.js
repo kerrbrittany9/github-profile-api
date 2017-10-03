@@ -14,7 +14,7 @@ const profileReducer = (state = defaultState, action) => {
     case types.RECEIVE_REPO:
       newState = {
         isFetching: false,
-        repos: state.repos
+        repos: action.starred
         };
       return newState;
     default:

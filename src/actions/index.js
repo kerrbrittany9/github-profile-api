@@ -9,7 +9,7 @@ export const receiveRepo = (starred) => ({
     starred
 });
 
-export function fetchRepo(dispatch) {
+export function fetchRepo() {
   return function (dispatch) {
     dispatch(requestRepo());
     return fetch("https://api.github.com/users/kerrbrittany9/starred")
@@ -26,7 +26,7 @@ export function fetchRepo(dispatch) {
           url: url
         }
       starred.push(allStarred)
-    }
+      }
       dispatch(receiveRepo(starred));
     });
   }

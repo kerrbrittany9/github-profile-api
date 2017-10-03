@@ -22,11 +22,16 @@ class ProfileDisplay extends React.Component {
     }
     return (
       <div>
+          <ul>
           {this.props.repos.map(function(repo){
-            return repo.name
-          })
+            console.log(repo);
+            return
+                    <li><a key={repo.url} target="_blank" href={repo.url}>{repo.name}</a></li>
+                  })
+        </ul>
         }
         <Button bsStyle="link" onClick={this.handleSubmit}>View Repos</Button>
+        {this.props.isFetching && <div>Fetching...</div>}
         <br/>
       </div>
     );
@@ -37,9 +42,9 @@ class ProfileDisplay extends React.Component {
 const mapStateToProps = state => {
   // const repos = state;
   return {
-    repos: state.repos
+    repos: state.repos,
+    isFetching: state.isFetching
   };
-  console.log(repos);
 };
 
 export default connect(mapStateToProps)(ProfileDisplay);
