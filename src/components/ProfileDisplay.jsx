@@ -24,14 +24,12 @@ class ProfileDisplay extends React.Component {
       <div>
           <ul>
           {this.props.repos.map(function(repo){
-            console.log(repo);
             return
-                    <li><a key={repo.url} target="_blank" href={repo.url}>{repo.name}</a></li>
-                  })
-        </ul>
-        }
+              <li><a key={repo.url} target="_blank" href={repo.url}>{repo.name}</a></li>
+            })
+          }
+            </ul>
         <Button bsStyle="link" onClick={this.handleSubmit}>View Repos</Button>
-        {this.props.isFetching && <div>Fetching...</div>}
         <br/>
       </div>
     );
