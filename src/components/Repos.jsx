@@ -4,7 +4,8 @@ import { Button } from "react-bootstrap";
 
 function Repos(props) {
   var buttonStyle = {
-    color: '#96EDFE'
+    border: 'no-border',
+    fontSize: '12'
   }
   var listStyle = {
     listStyle: 'none'
@@ -16,7 +17,7 @@ return(
         return  <li style={listStyle}><a key={repo.url} target="_blank" href={repo.url}>{repo.name}</a></li>
         })
       }
-      <button bsStyle="link" style={buttonStyle} onClick={props.handleHidingRepos}>Hide Repos</button>
+      <Button bsStyle="link" style={buttonStyle} onClick={props.handleHidingRepos}>Hide Repos</Button>
     </ul>
   </div>
   )
