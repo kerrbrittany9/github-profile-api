@@ -21,7 +21,7 @@ class ProfileDisplay extends React.Component {
     border: 'no-border'
     }
     var listStyle = {
-      listItemType: 'none'
+      listStyle: 'none'
     }
     return (
       <div>
