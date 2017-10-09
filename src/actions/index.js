@@ -9,6 +9,10 @@ export const receiveRepo = (starred) => ({
     starred
 });
 
+export const handleHidingRepos = (repos) => ({
+  type: types.HIDE_REPOS,
+})
+
 export function fetchRepo() {
   return function (dispatch) {
     dispatch(requestRepo());

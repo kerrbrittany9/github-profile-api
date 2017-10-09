@@ -17,6 +17,12 @@ const profileReducer = (state = defaultState, action) => {
         repos: action.starred
         };
       return newState;
+    case types.HIDE_REPOS:
+      newState = {
+        isFetching: false,
+        repos: []
+      }
+      return newState;
     default:
       return state;
   }

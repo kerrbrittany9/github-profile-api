@@ -1,16 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button } from "react-bootstrap";
 
-function Stats(props) {
-
+function Repos(props) {
+  var buttonStyle = {
+    color: '#96EDFE'
+  }
+  var listStyle = {
+    listStyle: 'none'
+  }
 return(
   <div>
-   <p>{props.profile.repos.name}</p>
+    <ul>
+      {props.repos.map(function(repo){
+        return  <li style={listStyle}><a key={repo.url} target="_blank" href={repo.url}>{repo.name}</a></li>
+        })
+      }
+      <button bsStyle="link" style={buttonStyle} onClick={props.handleHidingRepos}>Hide Repos</button>
+    </ul>
   </div>
-)
+  )
 }
-Stats.propTypes = {
-  profile: PropTypes.object
+Repos.propTypes = {
+  repos: PropTypes.object,
+  handleHidingRepos: PropTypes.func
 };
 
-export default Stats;
+export default Repos;
